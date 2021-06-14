@@ -1,4 +1,5 @@
 import random
+import ffmpeg
 from TikTokApi import TikTokApi
 api = TikTokApi.get_instance()
 
@@ -14,3 +15,4 @@ for tiktok in trending:
     videobuffer = api.get_video_by_tiktok(tiktok, custom_did=did)
     with open(tiktok['id'] + ".mp4", "wb") as out:
         out.write(videobuffer)
+    ffmpeg.input(tiktok['id'] + '.mp4').output(tiktok['id'] + "_encoded.mp4", vcodec='libx264').run()

@@ -4,6 +4,9 @@ Implementation of TikTokApi to download trends. Constant `VERIFY_FP` expects `s_
 
 ## Installation
 
+Download [ffmpeg](https://www.ffmpeg.org/)
+Add the bin to your PATH env
+
 ```
 pip install TikTokApi
 python -m playwright install
